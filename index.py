@@ -63,7 +63,7 @@ grid_search.fit(X_train, y_train)
 print(grid_search.best_estimator_)
 
 #model
-#It is telling me to set max_depth=10 for better accuracy let’s try it.
+#It is telling me to set n_estimatrs = 200 for better accuracy let’s try it.
 rfc = RandomForestClassifier(n_estimators=200)
 rfc.fit(X_train, y_train)
 
@@ -75,6 +75,7 @@ print(rfc_score) #90% accuracy
 #confusion matrix
 confmat = confusion_matrix(y_test,rfc_prediction)
 print(confmat)
+
 # Plotting the confusion matrix
 plt.figure(figsize=(8,6))
 sns.heatmap(confmat, annot=True, fmt='d', cmap='Blues')
